@@ -1,2 +1,1 @@
-# first-practice
-first repository
+Practice brushing an algorithm every day
