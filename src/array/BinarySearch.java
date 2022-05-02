@@ -1,5 +1,9 @@
 package array;
 
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author zhongyang, Email:zhongyanga@ujumedia.com
  * @version v1.0.0
