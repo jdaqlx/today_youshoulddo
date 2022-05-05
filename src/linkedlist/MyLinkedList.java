@@ -59,9 +59,51 @@ public class MyLinkedList {
         this.size++;
     }
 
-    public void addAtIndex(int index) {
-
+    public void addAtIndex(int index, int val) {
+        if (index > size) {
+            return;
+        }
+        if (index < 0) {
+            addAtHead(val);
+            return;
+        }
+        if (index == size) {
+            addAtTail(val);
+            return;
+        }
+        Node temp = this.head;
+        for (int i = 0; i < index-1; i++) {
+            temp = temp.next;
+        }
+        Node insertNode = new Node(val);
+        insertNode.next = temp.next;
+        temp.next = insertNode;
+        size++;
     }
 
+    public void deleteAtIndex(int index) {
+        if (index < 0 || head == null || index > size) {
+            return;
+        }
+        if (index == 0) {
+            if (size != 1) {
+                Node temp = head.next;
+                this.head = temp;
+                size--;
+                return;
+            }else{
+                this.head=null;
+                size--;
+                return;
+            }
+        }
+        Node temp = this.head;
+        for (int i = 0; i < index-1; i++) {
+            temp = temp.next;
+        }
+        Node deleteNode = temp.next;
+        temp.next = deleteNode.next;
+        size--;
+    }
 
 }
