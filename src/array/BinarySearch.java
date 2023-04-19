@@ -1,6 +1,5 @@
 package array;
-<<<<<< dev
-2
+1
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
