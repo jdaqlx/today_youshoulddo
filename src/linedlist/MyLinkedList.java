@@ -1,10 +1,6 @@
-package linkedlist;
+package linedlist;
 
-import com.sun.deploy.util.StringUtils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Objects;
 
 /**
  * @author zhongyang, Email:zhongyanga@ujumedia.com
@@ -27,8 +23,11 @@ public class MyLinkedList {
         this.size = 0;
         this.head = head;
     }
+    public MyLinkedList() {
+    }
 
     public Integer get(int index) {
+
         if (index < 0 || index > size || head == null) {
             return -1;
         }
@@ -106,4 +105,36 @@ public class MyLinkedList {
         size--;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MyLinkedList)) {
+            return false;
+        }
+        MyLinkedList that = (MyLinkedList) o;
+        return size == that.size;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(size, head);
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public Node getHead() {
+        return head;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
 }
